@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />  
+    <link rel="shortcut icon" href="imagesfavicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ramabhadra&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e6fd7a07ed.js"></script>
+    <script type="text/javascript" src="src/delighters.js"></script>
+    <link rel=stylesheet type="text/css" href="animate.css">
+   
+    
+    
+    <title>詳細ページ</title>
+    
+    <style>
+        @font-face {
+    font-family:SourceHanSerif-Medium;
+    src: local(SourceHanSerif-Medium),url(font/SourceHanSerif-Medium.otf);
+       }
+
+        .flex{
+            display: flex;
+        }
+        .wrap{
+            max-width:1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        @font-face{
+            font-family:SoukouMincho;
+            src: url(Font/SoukouMincho.ttf)
+        }
+        
+        .clear{
+                margin: 0;
+                padding: 0;
+            }
+        header{
+        }
+        @keyframes headSaber{
+            from{
+        opacity: 1;
+        left:0;
+    }
+    to{
+        left:15%;
+    }
+}
+        @media screen and (max-width: 1010px){
+          .headimg img{
+           max-width: 60%;
+           left: 0;
+        }
+        }
+        @media screen and (max-width: 375px){
+            .headimg img{
+           max-width: 375px;
+           left: 0;
+        }
+        }
+    @keyframes logo{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+
+    @keyframes headWatch{
+        from{
+            left: 80%;
+        }
+        to{
+            left: 55%;
+            opacity: 1;
+        }
+    }
+    
+    nav{
+        height: 60px;
+        width: 100%;
+        background: url(images/bg_ptn.gif);
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        position: fixed;
+        z-index: 100;
+
+    }
+    .navcontainer{
+        height: 60px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .navlogo{
+        height: 30px;
+    }
+    .menu{
+    
+    }
+    .menu a{
+        text-decoration: none;
+        padding: 20px;
+        font-family:Kosugi Maru;
+        letter-spacing: 2px;
+        color:#0f1f38;
+        transition: .3s;
+    }
+    nav ul li:hover a{
+        border-radius: 4px;
+        background: radial-gradient(ellipse at center, rgba(31,63,114,1) 0%, rgba(31,63,114,1) 29%, rgba(10,20,37,1) 100%);
+        color: #fff;
+        transition: .3s;
+
+    }
+   
+  .bgfix{
+      background: fixed;
+  }
+  .navFixed {
+  z-index: 200;          
+  position: fixed;      
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  min-width: 100%;
+  opacity: 0.94;
+  transition: opacity .5s ease-out;   
+}
+
+.BUY a{
+        text-decoration: none;
+        width:135px;
+        margin: 0 auto;
+        font-family:Kosugi Maru;
+        padding:12px 0px 12px 0px;
+        letter-spacing: 2px;
+        color:#fff;
+        transition: .3s;
+        display: block;
+        background: #001352;
+}
+.BUY:hover{
+    text-shadow:0 0 5px #fff;
+    transition: .3s;
+}
+.btn{
+    height: 39px;
+    width: 200px;
+    text-align: center;
+    background: url(images/bg-left.png) left center no-repeat, url(images/bg-right.png) right center no-repeat;
+    background-size: 35px 40px;
+}
+.block{
+    width: 100%;
+    height: 200px;
+}
+
+
+.fadeIn{
+        animation-duration: 1s;
+        animation-name: logo;
+        animation-fill-mode:forwards;
+        opacity: 0;
+}
+
+    .textAlign{
+        text-align: center;
+        vertical-align:middle;
+    }
+    
+    }
+    footer p{
+        padding: 20px;
+        color: #ddd;
+        font-size: 18px;
+        font-family:  SourceHanSerif-Medium;
+        line-height: 30px;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    
+    footer{
+        background:linear-gradient(to right, rgba(15,31,56,1) 0%, rgba(14,23,52,1) 22%, rgba(12,13,47,1) 48%, rgba(13,22,51,1) 73%, rgba(15,31,56,1) 100%);
+        height:50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #goTop{
+    position: fixed;
+    right:60px;
+    bottom:60px;
+   }
+   .TOP{
+       width: 50px;
+       height: 50px;
+       border-radius:5px;
+       background: url(images/up-arrow.png) no-repeat;
+       transition: all .5s;
+       animation-duration: 1s;
+       animation-name: logo;
+       animation-fill-mode:forwards;
+        opacity: 0;
+        cursor: pointer;
+      /* background: #1c2d64; */
+
+   }
+   .TOP:hover{
+    opacity: 0.5;
+    transition: .5s;
+   }
+   @-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  transition: all 1s;
+   animation-duration: 1s;
+   animation-fill-mode:forwards;
+
+}
+@keyframes fadein {
+    from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+}
+
+.fadein {
+   animation-name: fadein ;
+   transition: all 1s;
+   animation-duration: 1.5s;
+   animation-fill-mode:forwards;
+
+}
+body{
+    background: url(images/bg_ptn_b.gif);
+}
+.main{
+    width: 100%;
+    height: 900px;
+}
+#wrapper{
+		padding-top: 20px;
+		position: relative;
+		width: 672px;
+		height:428px;
+		overflow: hidden;
+		margin: 0 auto;
+    }
+    .pic img{
+        width: 672px;
+    }
+    #wrapper ul.pic{
+		position: absolute;
+		width: 9999px;
+	}
+	#wrapper h2,#wrapper h3{
+		cursor: pointer;
+		position: absolute;
+		top:214px;
+		z-index: 5;
+	} 
+	#wrapper h2{
+		left: 630px;
+	}
+	#wrapper ul.pic li{
+		float: left;
+	}
+	ul.page{
+		margin: 0 auto;
+		padding-top: 20px;
+	}
+	ul.page li{
+        margin: 30px 8px;
+		float: left;
+		width: 20px;
+		height: 6px;
+		border:1px solid rgba(0, 197, 223, 0.507);
+		border-radius: 5px;
+	}
+	.DotColor{
+        box-shadow: 0 0 3px rgb(0, 197, 223);
+		background-color:rgb(0, 197, 223) !important;
+	}
+    #wrapper h2 img, #wrapper h3 img{
+        height: 50px;
+    }
+    #wrapper h2:hover img, #wrapper h3:hover img{
+        filter: brightness(2);
+        transition: .3s;
+    }
+    h4{
+    text-align: center;
+    width: 600px;
+    font-family: SourceHanSerif-Medium;
+    line-height: 30px;
+    font-size: 30px;
+    color: #fff;
+    letter-spacing: 2px; 
+    background: url(images/ex_left.png) left center no-repeat, url(images/ex_right.png) right center no-repeat;
+    align-self:center;
+    
+    
+    }
+    .title{
+        width: 100%;
+        height:200px;
+        background: url(images/lancer.png) no-repeat;
+        background-size:contain;
+        justify-content: center;
+        align-items: center;
+        background-attachment: fixed;
+    }
+   h1{
+    /* text-align: center; */
+    font-family: SourceHanSerif-Medium;
+    line-height: 30px;
+    font-size: 40px;
+    color: #fff;
+    letter-spacing: 5px;
+   }
+   h2{
+    /* text-align: center; */
+    font-family: SourceHanSerif-Medium;
+    line-height: 30px;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 2px;
+    width: 200px;
+
+   }
+   h6{
+    /* text-align: center; */
+    font-family: SourceHanSerif-Medium;
+    line-height: 30px;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 2px;
+
+   }
+   .hr{
+       width: 100%;
+       max-width:1200px;
+       height: 1px;
+       background: #888;
+       margin: 0 auto;
+   }
+   .sblock{
+       width: 100%;
+       height: 50px;
+   }
+   .sale{
+       width: 100%;
+       height: 400px;
+       display: flex;
+       flex-direction: column;
+       justify-content:space-evenly
+   }
+   .s1 p{
+    font-family: SourceHanSerif-Medium;
+    line-height: 30px;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 2px;
+    padding-left: 30px;
+   }
+   .money{
+    margin-left: auto;
+    align-self: center;
+    font-family: SourceHanSerif-Medium;
+    line-height: 30px;
+    font-size: 28px;
+    color: rgb(230, 78, 78);
+    letter-spacing: 2px;
+    padding-left:100px;
+   }
+   .watch{
+       width: 100%;
+       height: 1800px;
+   }
+   .t1{
+    width:200px;
+   }
+   .t2{
+       padding:0 50px;
+   }
+   .t2 p, .t2 img{
+    font-family: SourceHanSerif-Medium;
+    line-height: 30px;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 2px;
+    padding-left: 30px;
+
+  
+   }
+   h3{
+    font-family: SourceHanSerif-Medium;
+    line-height: 30px;
+    font-size: 24px;
+    color: rgb(50, 149, 206);
+    letter-spacing: 2px;
+    padding-left: 30px;
+   }
+        </style>
+
+</head>
+<body>
+            
+        <nav class="dropdowns">
+                <div class="navcontainer wrap flex">
+                        <a href="new index.html"><img class="navlogo" src="images/header_logo.png" alt=""></a>
+                    <ul class="menu flex">
+                        <li style="border-left: 1px solid #ddd;"><a href="new index.html">home</a></li>
+                        <li style="border-left: 1px solid #ddd;"><a href="detail.html">詳細ページ</a></li>
+                        <li style="border-left: 1px solid #ddd;"><a href="QA.html">ご利用ガイド</a></li>
+                        <li style="border-right: 1px solid #ddd;border-left: 1px solid #ddd;"><a href="info.html">会社案内</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="sblock"></div>
+        <div class="main">
+                <div class="title flex"><h1>詳細ページ</h1></div>
+                <div class="slider">
+                        <div class="block" style="height:150px"></div>
+                        <div id="wrapper">
+                            <h2 style="padding: 0;"><img src="images/bg-right.png"></h2>
+                            <h3 style="padding: 0"><img src="images/bg-left.png"></h3>
+                            <ul class="pic">
+                                <li><img src="images/ph02.png"></li>
+                                <li><img src="images/ph03.png"></li>
+                                <li><img src="images/ph04.png"></li>
+                                <li><img src="images/ph05.png"></li>
+                                <li><img src="images/ph06.png"></li>
+                            </ul>
+                        </div>
+                        <ul class="page"></ul>
+            
+                        </div>
+                    </div>
+                    <div class="sblock"></div>
+                    <h6 class="wrap">Fate/Grand Order
+                            <br>オリジナルサーヴァントウォッチ
+                            <br>セイバー/アルトリア・ペンドラゴンモデル</h6>
+                    <div class="sblock"></div>
+                    <div class="hr"></div>
+            <div class="sale wrap ">
+                <div class="s1 flex">
+                    <img src="images/Yuk4wS.jpg" alt="">
+                    <div class="s1w">
+                    <p style="font-size: 20px;">[受注生産商品／単体]      グッズ グッズ</p>
+                            <p>MD17-0610001</p>
+                            <p>※お一人様3個まで</p>
+                    </div>
+                    <div class="money">￥45,000（税込）</div>
+                </div>
+                <div class="s1 flex">
+                        <img src="images/ttdvl2.jpg" alt="">
+                        <div class="s1w">
+                        <p style="font-size: 20px;">[受注生産商品／ウォッチスタンド付き] グッズ</p>
+                                <p>PLUS-0988</p>
+                                <p>※お一人様3個まで</p>
+                        </div>
+                        <div class="money">￥48,000（税込）</div>
+                    </div>
+            </div>
+            <div class="hr"></div>
+            <div class="sblock"></div>
+            <div class="watch wrap flex">
+                
+                <div class="t1"><h2>商品説明</h2></div>
+                <div class="t2"><p>Fate/Grand OrderとSEIKO 夢のコラボレーション<br>
+                        日本を代表する老舗時計ブランドであるSEIKOが手掛ける、この特別なFGOサーヴァントウォッチを皆様のお手元に。</p>
+                        <div class="sblock"></div>
+                        <h3>
+                                普段使いを意識したデザイン
+                        </h3>
+                                <p>
+                                日常で使う「時計」だからこそ、盤面は極力シンプルにしました。 サーヴァント名は側面に、甲冑の模様はバンド部分に。 他のキャラクターウォッチとは一線を画すデザインはまさにSEIKOコラボウォッチならでは。
+                        </p>
+                        <div class="sblock"></div>
+                        <img src="images/spec01 (1).png" alt="">
+                        <div class="sblock"></div>
+                        <h3>サーヴァントの個性を表現した配色</h3>
+                        <p>キャラクターカラーであるブルーを基調に、 甲冑のシルバーや、王冠や髪色のゴールドを加えることで、 アルトリア・ペンドラゴンを自然に表現しています。</p>
+                        <div class="block flex" style="align-items: center">
+                            <div class="hr" style="background: #444"></div>
+                        </div>
+                        <h3>「約束された勝利の剣」の針</h3>
+                        <p>アルトリア･ペンドラゴンの宝具であり、 Fateシリーズでもっとも有名である「約束された勝利の剣（エクスカリバー）」。 この時計ではオリジナルの針で表現しました。 その黄金の輝きはこの時計で最も目を引きます。</p>
+                        <div class="sblock"></div>
+                        <img src="images/spec03 (1).png" alt="">
+                        <div class="sblock"></div>
+                        <h3>背面にはシリアルナンバー入り</h3>
+                        <p>銀色の背面にはカルデアマークとSEIKOロゴのほか、シリアルナンバーが刻印されます。
+                            </p>
+                        <div class="sblock"></div>
+                        <p>※シリアルナンバーはお選び頂けません。 ※画像は開発中のものです。  </p>
+                </div>
+                
+                
+            </div>
+            <div class="hr"></div>
+            <div class="sblock"></div>
+            <div class="watch wrap flex" style="height: 500px;">
+                
+                    <div class="t1"><h2>ウォッチスタンド付きセット</h2></div>
+                    <div class="t2">
+                            
+                            <h3>
+                                    「ウォッチスタンド」付きセットも
+                            </h3>
+                                    <p>
+                                            この特別な時計を身に着けている時だけではなく、家でもきれいに飾りたい。<br>
+                                            そんな方に向けて、時計を飾っておける「ウォッチスタンド」付きセットをご用意。<br>
+                                            このウォッチスタンドも「ピアノ塗装」と呼ばれる高級感のある仕上がりになっています。
+                            </p>
+                            <div class="sblock"></div>
+                            <img src="images/specialgift.png" alt="">
+                            <div class="sblock"></div>
+                    </div>
+        </div>
+        <div class="hr"></div>
+        <div class="sblock"></div>
+        <div class="watch wrap flex" style="height: 120px;">
+                
+                <div class="t1"><h2>予約受付期間</h2></div>
+                <div class="t2">
+                        
+                        <h3 style="color: crimson">
+                                2017年12月8日（金）18:00～2018年2月13日（火）24:00
+                        </h3>
+                                <p>※ 当商品は受注生産商品となります。<br>
+                                        ※ お客様のご都合によるキャンセル・返品は承る事が出来ません。
+                        </p>
+                        <div class="sblock"></div>
+                </div>
+    </div>
+    <div class="hr"></div>
+    <div class="hr"></div>
+    <div class="sblock"></div>
+    
+    <div class="watch wrap flex" style="height: 120px;">
+            
+            <div class="t1"><h2>お届け時期</h2></div>
+            <div class="t2">
+                    
+                    <h3 style="font-weight: 500;text-decoration:underline;color: darkgrey">
+                            22018年5月末より順次出荷
+                    </h3>
+                            <p>※ お届け時期は変更となる可能性がございます。
+
+                    </p>
+                    <div class="sblock"></div>
+            </div>
+</div>
+<div class="hr"></div>
+<div class="sblock"></div>
+
+<div class="watch wrap flex" style="height:1800px;">
+        
+        <div class="t1"><h2>商品仕様</h2></div>
+        <div class="t2">
+            
+                <p>
+                        ●搭載モデル：SZER053<br>
+                        ●ムーブメント：7T92<br>
+                        ●駆動：クオーツ式　／電池寿命3年<br>
+                        ※ ストップウオッチは１日２時間以内を基準としていますので、<br>
+                        　それ以上使用した場合は上記の期間に満たないうちに電池寿命が切れる場合があります。<br>
+                        ※ お買い上げの時計にあらかじめ組み込まれている電池は、機能・性能を
+                        　　 <br>   　みるためのモニター用です。 お買い上げ後上記の期間に満たないうちに
+                        　　  <br>　電池寿命が切れることがありますのでご了承ください。
+                        
+                </p>
+                <div class="sblock"></div>
+                <p>
+                        ●防水：日常生活用強化防水（10気圧防水）<br>
+                        ●機能：多軸表示によるストップウオッチ機能を備えたアナログ時計です。
+                        　　　<br>　多機能性、便利さを兼ね備えています。<br>
+                        ※ 現在時刻を時・分・小秒針で表示します。<br>
+                        ※ ストップウオッチは、1／20秒単位12時間計です。1／20秒、秒、分、時を
+                        　　 <br>　表す４本の針で、計測時間を表示します。スプリット計測ができます。
+                        　　 <br>　12時間経過で自動的にストップしリセットします。
+                </p>
+                <img src="images/setumei01_s (1).jpg" alt="">
+                <div class="sblock"></div>
+                <p>● 関連サイト<br>
+                        「Fate/Grand Order」公式サイト<br>
+                        
+                        © TYPE-MOON / FGO PROJECT</p>
+                <div class="sblock"></div>
+        </div>
+        
+</div>
+<div class="hr"></div>
+<div class="sblock"></div>
+<div class="watch wrap flex" style="height: 300px;">
+                
+        <div class="t1"><h2>ご注意</h2></div>
+        <div class="t2">
+                        <p>※お客様のご都合によるキャンセル・交換のご希望はお受けすることができません。</p>
+                                <p style="color: palevioletred">※お客様都合での一方的なキャンセル・受取り拒否等があった場合、
+                                それ以降は弊社とのお取引等をお断りさせて頂く場合があります。予めご了承ください。</p>
+                                <p>※破損または配送の手違いなどの場合は返品を受け付けます。商品到着後7日以内にご連絡ください。</p>
+                                <p>※予約受付期間は予告なく変更することがございます。期間内であっても早期終了する場合がございますので予めご了承ください。</p>
+                                <p style="color: palevioletred">※予約受付期間を過ぎても販売継続する商品もございますが、在庫がなくなり次第終了となります。</p>
+                                <p>※発売日が異なる商品を1注文でご購入頂くと、発売日の遅い商品にあわせて一括配送となりますのでご注意ください。</p>
+                </p>
+                <div class="sblock"></div>
+        </div>
+</div>
+<div class="block"></div>
+<footer class="flex">
+        <p style="font-size:12px;padding: 0;color: #ddd; letter-spacing: 2px;"> ©TYPE-MOON / FGO PROJECT © Aniplex Inc. All rights reserved. </p>
+ </footer>
+
+<a class="ATOP" id="goTop"></a>
+  
+        
+      
+
+         <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      
+  
+          <script>
+          // jQuery is required to run this code
+    $( document ).ready(function() {
+      scaleVideoContainer();
+  
+      initBannerVideoSize('.video-container .poster img');
+      initBannerVideoSize('.video-container .filter');
+      initBannerVideoSize('.video-container video');
+  
+      $(window).on('resize', function() {
+        scaleVideoContainer();
+        scaleBannerVideoSize('.video-container .poster img');
+        scaleBannerVideoSize('.video-container .filter');
+        scaleBannerVideoSize('.video-container video');
+      });
+    });
+  
+    function scaleVideoContainer() {
+      var height = $(window).height() + 5;
+      var unitHeight = parseInt(height) + 'px';
+      $('.homepage-hero-module').css('height',unitHeight);
+    }
+  
+    function initBannerVideoSize(element){
+      $(element).each(function(){
+        $(this).data('height', $(this).height());
+        $(this).data('width', $(this).width());
+      });
+  
+      scaleBannerVideoSize(element);
+    }
+  
+    function scaleBannerVideoSize(element) {
+  
+      var windowWidth = $(window).width(),
+      windowHeight = $(window).height() + 5,
+      videoWidth,
+      videoHeight;
+  
+      // console.log(windowHeight);
+  
+      $(element).each(function(){
+        var videoAspectRatio = $(this).data('height')/$(this).data('width');
+  
+        $(this).width(windowWidth);
+  
+        if(windowWidth < 1000){
+            videoHeight = windowHeight;
+            videoWidth = videoHeight / videoAspectRatio;
+            $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+  
+            $(this).width(videoWidth).height(videoHeight);
+        }
+  
+        $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+  
+      });
+    }
+          </script>
+  
+  <script type="text/javascript">
+      $(function() {
+        $(window).scroll(function() {
+          if ($(this).scrollTop() > 960)  {          /* 要滑動到選單的距離 */
+             $('.dropdowns').addClass('navFixed');   /* 幫選單加上固定效果 */
+          } else {
+            $('.dropdowns').removeClass('navFixed'); /* 移除選單固定效果 */
+          }
+        });
+      });
+  </script>
+  <script>
+      $(function(){
+   
+   var $ulPic=$('ul.pic'),
+   $ulPage=$('ul.page'),
+   _liPicHtml=$ulPic.html(),//把裡面元素抓出來
+   _width=$('#wrapper').width(),
+   nowIndex=0,
+   timer,
+   speed=2000,//換banner時間
+   picLen=$ulPic.find('li').length;
+  
+   //---------------------------------------------------------------------
+  
+   //生出page dot
+   $ulPic.find('li').each(function(){
+       $ulPage.append('<li></li>');
+   })
+   $ulPage.css({width:$('ul.page li').outerWidth(true)*picLen});
+      //outerWidth(true)=margin+padding
+  
+   //---------------------------------------------------------------------
+  
+   //把圖片變double
+   $ulPic.html(_liPicHtml+_liPicHtml);//把值塞進去
+   picLen=$('ul.pic li').length;//本來4張圖 現在變8張了
+  
+   //init
+   dot();
+   timer=setTimeout(bannerMove,speed)
+  
+   //---------------------------------------------------------------------
+  
+   //按左右
+   $('#wrapper h2').click(function(){
+       bannerMove();
+   })
+   $('#wrapper h3').click(function(){
+  
+       clearTimeout(timer);
+  
+       //$ulPic瞬間移動到中間
+       if(nowIndex<=0){
+               $ulPic.css({left:picLen/2*_width*-1});
+               nowIndex=picLen/2;
+           }
+  
+       nowIndex=(nowIndex-1+picLen)%picLen;//上一張圖魔法指令
+  
+       //圖向左移動
+       $ulPic.animate({left:nowIndex*_width*-1},500,function(){
+           timer=setTimeout(bannerMove,speed)
+       });
+  
+       dot();
+   })
+  
+   //圖片移動
+   function bannerMove(){
+  
+       clearTimeout(timer);
+       nowIndex=(nowIndex+1)%picLen;//下一張圖魔法指令
+  
+       //圖向左移動
+       $ulPic.animate({left:nowIndex*_width*-1},500,function(){
+           //$ulPic瞬間移動到最左邊
+           if(nowIndex>=picLen/2){
+               $ulPic.css({left:0});
+               nowIndex=0;
+           }
+           timer=setTimeout(bannerMove,speed)
+       });
+  
+       dot();
+   }
+  
+   function dot(){
+       //dot change color
+       $ulPage.find('li').removeClass('DotColor').eq(nowIndex).addClass('DotColor');
+       if(nowIndex==5){
+           $ulPage.find('li').eq(0).addClass('DotColor');
+       }
+   }
+  
+  })
+      </script>
+      <script>
+  
+              $("#goTop").click(function(){
+                //$(window).scrollTop(0);
+                $('html,body').animate({
+                      scrollTop: 0
+                }, 700);
+              });
+              
+            </script>
+            <script>
+                   $(window).scroll(function(event){
+         var st = $(this).scrollTop();
+         if(st>1200){
+          $(".ATOP").addClass('TOP');
+         }else{
+          $(".ATOP").removeClass('TOP');
+          $("")
+         }
+      });
+      
+              </script>
+              
+                     <script>
+                          // 視窗事件
+                          $( window ).scroll( function () {
+                               
+                              if ( $( this ).scrollTop() > $( "#areaA" ).offset().top -300 ) {
+              
+                                $( "#areaA .visible" ).each( function ( i ) {
+                                  //讓所有 visible delay 200秒 刪除class 切換  fadeInUp
+                                  $( this ).delay( i * 200 ).queue( function () {
+                                    $( this ).removeClass( "visible" ).addClass( "fadeInUp" );
+                                  } );
+                                } );
+                                $( "#areaA .UNfadein" ).each( function ( i ) {
+                                  //讓所有 visible delay 200秒 刪除class 切換  fadeInUp
+                                  $( this ).delay( i * 200 ).queue( function () {
+                                    $( this ).removeClass( "UNfadein" ).addClass( "fadein" );
+                                  } );
+                                } );
+                              }
+                          
+                          } );    
+                          
+                          </script>
+  
+
+
+</body>
+</html>
