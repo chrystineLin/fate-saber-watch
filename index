@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />  
+    <link rel="shortcut icon" href="imagesfavicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ramabhadra&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e6fd7a07ed.js"></script>
+    <script type="text/javascript" src="src/delighters.js"></script>
+    <link rel=stylesheet type="text/css" href="animate.css">
+
+    
+    
+    <title>Saber Watch</title>
+    
+    <style>
+        @font-face {
+    font-family:SourceHanSerif-Medium;
+    src: local(SourceHanSerif-Medium),url(font/SourceHanSerif-Medium.otf);
+       }
+
+        .flex{
+            display: flex;
+        }
+        .wrap{
+            max-width:1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        @font-face{
+            font-family:SoukouMincho;
+            src: url(Font/SoukouMincho.ttf)
+        }
+        
+            .clear{
+                margin: 0;
+                padding: 0;
+            }
+        header{
+        }
+        .headcontainer{
+            width: 100%;
+            height: 960px;
+            background:  linear-gradient(90deg, rgba(15,31,56,1) 0%, rgba(37,78,142,1) 50%, rgba(15,31,56,1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .headimg img{
+            position: absolute;
+            max-width:1010px;
+            opacity: 0.2;
+            transition: 1s;
+            left:15%;
+            top:5%;
+            z-index: 90;
+            animation-name: headSaber;
+            animation-duration:2s;
+    
+        }
+        @keyframes headSaber{
+            from{
+        opacity: 1;
+        left:0;
+    }
+    to{
+        left:15%;
+    }
+}
+        @media screen and (max-width: 1010px){
+          .headimg img{
+           max-width: 60%;
+           left: 0;
+        }
+        }
+        @media screen and (max-width: 375px){
+            .headimg img{
+           max-width: 375px;
+           left: 0;
+        }
+        }
+    .headlogo{
+        position: absolute;
+        top: 18%;
+        left: 40%;
+        text-align: center;
+        z-index: 100;
+        animation-duration: 1s;
+        animation-delay: 2s;
+        animation-name: logo;
+        animation-fill-mode:forwards;
+        opacity: 0;
+      
+    }
+    .headlogo img{
+        position: absolute;
+        height: 80px;
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5))
+    }
+    @keyframes logo{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    .headWatch{
+        position: relative;
+        top: 30%;
+        z-index: 100;
+    }
+    .headWatch img{
+        max-width: 650px;
+        position: relative;
+        left: 50%;
+        transform: rotate(-15deg);
+        opacity: 0;
+        animation-name: headWatch;
+        animation-delay: 2s;
+        animation-duration:1s; 
+        animation-fill-mode:forwards;
+    }
+    @keyframes headWatch{
+        from{
+            left: 80%;
+        }
+        to{
+            left: 55%;
+            opacity: 1;
+        }
+    }
+    .headWord{
+        position: absolute;
+        left: 18%;
+        font-family: SoukouMincho;
+        font-size: 32px;
+        color: #fff;
+        text-shadow: 0 0 8px #00e4ff;
+        letter-spacing: 3px;
+        line-height: 50px;
+        z-index: 100;
+        animation-duration: 1s;
+        animation-delay: 2s;
+        animation-name: logo;
+        animation-fill-mode:forwards;
+        opacity: 0;
+      
+    }
+    .headWord p{
+        text-shadow:0 0 8px #fff;
+        font-size: 26px;
+        line-height: 30px;
+        font-family: Adobe Garamond Pro;
+
+    }
+    nav{
+        height: 60px;
+        width: 100%;
+        background: url(images/bg_ptn.gif);
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+
+    }
+    .navcontainer{
+        height: 60px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .navlogo{
+        height: 30px;
+    }
+    .menu{
+    
+    }
+    .menu a{
+        text-decoration: none;
+        padding: 20px;
+        font-family:Kosugi Maru;
+        letter-spacing: 2px;
+        color:#0f1f38;
+        transition: .3s;
+    }
+    nav ul li:hover a{
+        border-radius: 4px;
+        background: radial-gradient(ellipse at center, rgba(31,63,114,1) 0%, rgba(31,63,114,1) 29%, rgba(10,20,37,1) 100%);
+        color: #fff;
+        transition: .3s;
+
+    }
+    .video{
+        overflow: hidden;
+    }
+    .main{
+        height: 800px;
+        background: #000;
+        background-attachment:fixed;
+    }
+    
+  .homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+  }
+
+  .no-video .video-container video,
+  .touch .video-container video {
+    display: none;
+  }
+
+  .no-video .video-container .poster,
+  .touch .video-container .poster {
+    display: block !important;
+  }
+
+  .video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+  }
+
+  .video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+  }
+
+  .video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0%;
+  }
+
+  .video-container video.fillWidth {
+    width: 100%;
+  }
+  .bgfix{
+      background: fixed;
+  }
+  .navFixed {
+  z-index: 200;          
+  position: fixed;      
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  min-width: 100%;
+  opacity: 0.94;
+  transition: opacity .5s ease-out;   
+}
+.maincontainer{
+    
+}
+.mainword{
+    color: #fff;
+}
+.ml2{
+    font-family: Ramabhadra;
+    font-size: 4.5em;
+    background-image: linear-gradient(42deg, #1b2c80 1%, #5a95c8 28%, #2536da 48%, #5a95c8 71%, #ffffff 100%);
+
+;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.mainword p{
+    font-family: SourceHanSerif-Medium;
+    line-height: 30px;
+    font-size: 24px;
+    padding-top:20px;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+ h2{
+    font-family: SourceHanSerif-Medium;
+    line-height: 30px;
+    font-size: 30px;
+    padding-top: 50px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 2px;
+}
+.BUY a{
+        text-decoration: none;
+        width:135px;
+        margin: 0 auto;
+        font-family:Kosugi Maru;
+        padding:12px 0px 12px 0px;
+        letter-spacing: 2px;
+        color:#fff;
+        transition: .3s;
+        display: block;
+        background: #001352;
+}
+.BUY:hover{
+    text-shadow:0 0 5px #fff;
+    transition: .3s;
+}
+.btn{
+    height: 39px;
+    width: 200px;
+    text-align: center;
+    background: url(images/bg-left.png) left center no-repeat, url(images/bg-right.png) right center no-repeat;
+    background-size: 35px 40px;
+}
+.block{
+    width: 100%;
+    height: 200px;
+}
+.introduce{
+    width: 100%;
+    height: 2000px;
+    background:  linear-gradient(to right, rgba(15,31,56,1) 0%, rgba(14,23,52,1) 22%, rgba(12,13,47,1) 48%, rgba(13,22,51,1) 73%, rgba(15,31,56,1) 100%);
+    position: relative;
+}
+.introduce img{
+    opacity: 0;
+}
+.intrBlack{
+    height: 2000px;
+    width: 100%;
+    position: absolute;
+    /* background: url(images/bg-magicsquare.png) ; */
+    background:linear-gradient(to bottom, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0) 20%, rgba(25,49,87,0) 100%);
+}
+.addBackground{
+    height:2000px;
+    width: 100%;
+    position: absolute;
+    background: url(images/bg-magicsquare.png) ;
+}
+.introword p{
+    padding: 40px;
+    color: #ddd;
+    font-family: SourceHanSerif-Medium;
+    max-width: 600px;
+    line-height: 30px;
+    font-size: 20px;
+    opacity: 0;
+    /* background:#1b2c807e; */
+}
+.introword h2{
+    opacity: 0;
+}
+.introword{
+    padding-left: 20px;
+    flex-direction: column;
+
+}
+.p-bg{
+    background:#1b2c807e;
+    width: 130%;
+    opacity: 0;
+}
+.intrcon{
+    padding: 100px 0 50px 0;
+}
+.fadeIn{
+        animation-duration: 1s;
+        animation-name: logo;
+        animation-fill-mode:forwards;
+        opacity: 0;
+}
+.slider{
+    background: url(images/bg_story.jpg) no-repeat ;
+    background-position:center;
+    background-size: 100%;
+    height:900px;
+    background-attachment:fixed;
+}
+.slidercon{
+    border: 1px solid #fff;
+    max-width: 840px;
+    height: 560px;
+    /* overflow: hidden; */
+}
+#wrapper{
+		padding-top: 20px;
+		position: relative;
+		width: 840px;
+		height: 560px;
+		overflow: hidden;
+		margin: 0 auto;
+	}
+    #wrapper ul.pic{
+		position: absolute;
+		width: 9999px;
+	}
+	#wrapper h2,#wrapper h3{
+		cursor: pointer;
+		position: absolute;
+		top:280px;
+		z-index: 5;
+	} 
+	#wrapper h2{
+		left: 795px;
+	}
+	#wrapper ul.pic li{
+		float: left;
+	}
+	ul.page{
+		margin: 0 auto;
+		padding-top: 20px;
+	}
+	ul.page li{
+        margin: 30px 8px;
+		float: left;
+		width: 20px;
+		height: 6px;
+		border:1px solid rgba(0, 197, 223, 0.507);
+		border-radius: 5px;
+	}
+	.DotColor{
+        box-shadow: 0 0 3px rgb(0, 197, 223);
+		background-color:rgb(0, 197, 223) !important;
+	}
+    #wrapper h2 img, #wrapper h3 img{
+        height: 50px;
+    }
+    #wrapper h2:hover img, #wrapper h3:hover img{
+        filter: brightness(2);
+        transition: .3s;
+    }
+    .table{
+        background: url(images/bg_ptn_b.gif);
+        width: 100%;
+        height: 900px;
+    }
+    .tablecon{
+        justify-content:center;
+        flex-direction: column;
+    }
+    h4{
+    text-align: center;
+    width: 600px;
+    font-family: SourceHanSerif-Medium;
+    line-height: 30px;
+    font-size: 30px;
+    color: #fff;
+    letter-spacing: 2px; 
+    background: url(images/ex_left.png) left center no-repeat, url(images/ex_right.png) right center no-repeat;
+    align-self:center;
+    
+    
+    }
+    table{
+        margin: 40px;
+    }
+    tr, td, .more p{
+        /* max-width: 55%; */
+        padding: 15px;
+        border:5px solid #000;
+        color: #ddd;
+        font-size: 18px;
+        font-family:  SourceHanSerif-Medium;
+        line-height: 35px;
+    }
+    .white{
+        background: rgba(255, 255, 255, 0.3)
+    }
+    .blue{
+        background: #5266cc42;
+    }
+    .textAlign{
+        text-align: center;
+        vertical-align:middle;
+    }
+    .more{
+        width: 100%;
+        height: 400px;
+        background:url(images/bg-green.jpg) no-repeat;
+        background-size:cover;
+        overflow: hidden;
+        display: flex;
+        background-attachment:fixed;
+
+    }
+    .morecon{
+        align-items: center;
+    }
+    .price{
+        background: url(images/bg_ptn_b.gif);
+        width: 100%;
+        height: 700px;
+        align-items: center;
+    }
+    .pricecon{
+        justify-content:center;
+        flex-direction:column;
+    }
+    .price img{
+        display: block;
+        margin: 0 auto;
+    }
+    .price p, footer p{
+        padding: 20px;
+        color: #ddd;
+        font-size: 18px;
+        font-family:  SourceHanSerif-Medium;
+        line-height: 30px;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    .figureword{
+        flex-direction: column;
+        justify-content:space-evenly;
+    }
+    footer{
+        background:linear-gradient(to right, rgba(15,31,56,1) 0%, rgba(14,23,52,1) 22%, rgba(12,13,47,1) 48%, rgba(13,22,51,1) 73%, rgba(15,31,56,1) 100%);
+        height:50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #goTop{
+    position: fixed;
+    right:60px;
+    bottom:60px;
+   }
+   .TOP{
+       width: 50px;
+       height: 50px;
+       border-radius:5px;
+       background: url(images/up-arrow.png) no-repeat;
+       transition: all .5s;
+       animation-duration: 1s;
+       animation-name: logo;
+       animation-fill-mode:forwards;
+        opacity: 0;
+        cursor: pointer;
+      /* background: #1c2d64; */
+
+   }
+   .TOP:hover{
+    opacity: 0.5;
+    transition: .5s;
+   }
+   @-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  transition: all 1s;
+   animation-duration: 1s;
+   animation-fill-mode:forwards;
+
+}
+@keyframes fadein {
+    from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+}
+
+.fadein {
+   animation-name: fadein ;
+   transition: all 1s;
+   animation-duration: 1.5s;
+   animation-fill-mode:forwards;
+
+}
+   
+        </style>
+
+</head>
+<body>
+        <header id="header">
+            
+                <div class="headcontainer">
+                    <figure class="headlogo">
+                        <img src="images/collabologo.png" alt="logo">
+                    </figure>
+                    <figure class="headimg">
+                        <img src="images/saber01.png" alt="saber">
+                    </figure>
+                    <figure class="headWatch">
+                        <img src="images/watch.png" alt="">
+                    </figure>
+                    <div class="headWord">
+                        オリジナルサーヴァントウォッチ<br>
+                                セイバー/アルトリア・ペンドラゴン モデル
+                        <p>
+                                Original Servant Watch <br>
+                                Saber/Altria Pendragon MODEL
+                        </p>
+                    </div>
+                </div>
+            </header>
+            <nav class="dropdowns">
+                <div class="navcontainer wrap flex">
+                        <a href="new index.html"><img class="navlogo" src="images/header_logo.png" alt=""></a>
+                    <ul class="menu flex">
+                        <li style="border-left: 1px solid #ddd;"><a href="new index.html">home</a></li>
+                        <li style="border-left: 1px solid #ddd;"><a href="detail.html">詳細ページ</a></li>
+                        <li style="border-left: 1px solid #ddd;"><a href="QA.html">ご利用ガイド</a></li>
+                        <li style="border-right: 1px solid #ddd;border-left: 1px solid #ddd;"><a href="info.html">会社案内</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="video" id="video">
+                    <div class="homepage-hero-module">
+                            <div class="video-container">
+                              <div class="filter"></div>
+                              <video autoplay loop muted playsinline src="images/Fate_Grand Order Saber.mp4" class="fillWidth"></video>
+                            
+                            </div>
+                          </div>
+            </div>
+        <div class="main">
+            <div class="block"></div>
+            <div class="mainContainer wrap flex">
+            <figure class="mainWatch">
+               <img src="images/lineup01 (2).png" alt="">
+            </figure>
+            <div class="mainword">
+                <h1 class="ml2">Fate/Grand Order</h1><p style="font-family: Arial, Helvetica, sans-serif; color:cornflowerblue; font-size:24px; margin:0 20%;">x</p><h1 class="ml2">SEIKO</h1>
+                <h2 class="shake ">夢のコラボレーション</h2>
+                <p>日本を代表する老舗時計ブランドであるSEIKOが手掛ける、<br>
+                        この特別なFGOサーヴァントウォッチを皆様のお手元に。</p>
+            </div>
+        </div>
+        <div class="BUY wrap btn">
+        <a href="detail.html">購入ページへ</a>
+        </div>
+        </div>
+        <div class="introduce" id="introduce">
+            <div class="intrBlack" id="areaA">
+                <div class="addBackground">
+                    <div class="intrcon flex wrap">
+                        <img class="UNfadein" style="max-height: 300px;" src="images/spec01 (1).png" alt="">
+                        <div class="introword flex">
+                        <h2 style="padding:36px;" class="visible">普段使いを意識したデザイン</h2>
+                        <div class="p-bg UNfadein">
+                        <p class="visible">日常で使う「時計」だからこそ、盤面は極力シンプルにしました。 サーヴァント名は側面に、甲冑の模様はバンド部分に。 他のキャラクターウォッチとは一線を画すデザインはまさにSEIKOコラボウォッチならでは。</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="intrcon flex wrap" style="flex-direction:row-reverse;justify-content: space-between;">
+                            <img class="UNfadein" style="max-height: 300px;" src="images/spec02 (1).png" alt="">
+                            <div class="introword flex" style="padding-left: 0px;width: 100%;">
+                            <h2 class="visible" style="padding:36px 60px;text-align:right;">「約束された勝利の
+                                    剣エクスカリバー」の針</h2>
+                            <div class="p-bg flex UNfadein" style="left: 0; flex-direction:row-reverse;width: 98%;">
+                            <p class="visible" style="right: 0;">アルトリア･ペンドラゴンの宝具であり、 Fateシリーズでもっとも有名である「約束された勝利の剣エクスカリバー」。 この時計ではオリジナルの針で表現しました。 その黄金の輝きはこの時計で最も目を引きます。</p>
+                            </div>
+                            </div>
+                
+                        </div>
+                        <div class="intrcon flex wrap">
+                                <img class="UNfadein" style="max-height: 300px;" src="images/spec04 (1).png" alt="">
+                                <div class="introword flex">
+                                <h2 class="visible" style="padding:36px;">背面にはシリアルナンバー入り</h2>
+                                <div class="p-bg UNfadein">
+                                <p class="visible" style="padding-bottom: 68px;">銀色の背面にはカルデアマークとSEIKOロゴのほか、シリアルナンバーが刻印されます。
+
+                                        ※シリアルナンバーはお選び頂けません。 </p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="intrcon flex wrap" style="flex-direction:row-reverse;justify-content: space-between;">
+                                    <img class="UNfadein" style="max-height: 300px;" src="images/spec01 (1).png" alt="">
+                                    <div class="introword flex" style="padding-left: 0px;width: 100%;">
+                                    <h2 class="visible" style="padding:36px 65px;text-align:right;">サーヴァントの個性を表現した配色</h2>
+                                    <div class="p-bg flex UNfadein" style="left: 0; flex-direction:row-reverse;width: 98%;">
+                                    <p class="visible" style="right: 0;padding-bottom:65px;">キャラクターカラーであるブルーを基調に、 甲冑のシルバーや、王冠や髪色のゴールドを加えることで、 アルトリア・ペンドラゴンを自然に表現しています。</p>
+                                    </div>
+                                    </div>
+                        
+                                </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="slider">
+            <div class="block" style="height:150px"></div>
+            <div id="wrapper">
+                <h2 style="padding: 0;"><img src="images/bg-right.png"></h2>
+                <h3><img src="images/bg-left.png"></h3>
+                <ul class="pic">
+                    <li><img src="images/ph02.png"></li>
+                    <li><img src="images/ph03.png"></li>
+                    <li><img src="images/ph04.png"></li>
+                    <li><img src="images/ph05.png"></li>
+                    <li><img src="images/ph06.png"></li>
+                </ul>
+            </div>
+            <ul class="page"></ul>
+
+            </div>
+        </div>
+        <div class="table">
+            <div class="block" style="height: 75px;"></div>
+            <div class="tablecon wrap flex">
+                <h4>ムーブメント仕様</h4>
+                <table>
+                    <tbody>
+                    <tr class="white">
+                        <td class="textAlign">搭載モデル</td>
+                        <td>SZER053</td>
+                    </tr>
+                    <tr class="blue">
+                        <td class="textAlign">ムーブメント</td>
+                        <td>7T92</td>
+                    </tr>
+                    <tr class="white">
+                        <td class="textAlign">駆動</td>
+                        <td>クオーツ式　／電池寿命3年</td>
+                    </tr>
+                    <tr class="blue">
+                        <td class="textAlign">防水</td>
+                        <td>日常生活用強化防水（10気圧防水）</td>
+                    </tr>
+                    <tr class="white">
+                        <td class="textAlign">機能</td>
+                        <td>多軸表示によるストップウオッチ機能を備えたアナログ時計です。
+                                <br>多機能性、便利さを兼ね備えています。
+                                <br>・現在時刻を時・分・小秒針で表示します。
+                                <br>・ストップウオッチは、1／20秒単位12時間計です。1／20秒、秒、分、時を表す４本の針で、<br>計測時間を表示します。スプリット計測ができます。<br>12時間経過で自動的にストップしリセットします。</td>
+                    </tr>
+                    <tr class="blue">
+                        <td class="textAlign">ケース</td>
+                        <td>素材：ステンレススチール</td>
+                    </tr>
+                    <tr class="white">
+                        <td class="textAlign">その他機能</td>
+                        <td>素材：ステンレススチール
+                                <br>・らくらくアジャスト方式（ご自身でアジャストできます）</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="more">
+            <div class="morecon flex wrap">
+                <img src="images/specialgift.png" alt="">
+                <div class="moreword">
+                <h2>「ウォッチスタンド」付きセットも</h2>
+                <p style="border: none;">この特別な時計を身に着けている時だけではなく、家でもきれいに飾りたい。
+                        <br>そんな方に向けて、時計を飾っておける「ウォッチスタンド」付きセットをご用意。
+                        <br>このウォッチスタンドも「ピアノ塗装」と呼ばれる高級感のある仕上がりになっています。</p>
+                </div>
+            </div>
+        </div>
+        <div class="price">
+            <div class="block" style="height: 75px;"></div>
+            <div class="pricecon flex wrap">
+                <h4>商品詳細</h4>
+                <div class="block" style="height: 120px;""></div>
+                <div class="figucon flex">
+                <figure>
+                    <img src="images/lineup01-stand.png" alt="">
+                    <p>ウォッチスタンド付きセット<br>販売価格 : 48,000円></p>
+                </figure>
+                <figure>
+                        <img src="images/lineup01 (1).png" alt="">
+                        <p>時計単品<br>販売価格 : 45,000円></p>
+                    </figure>
+                    <div class="figureword flex">
+                        <p style="text-align: left ;background:#1b2c808a;border-radius: 8px;;">当商品は受注生産商品となりますが、製造の都合上まとまった数で順次製造しまして、 2018年5月末以降、先にご注文いただいた方から発送してまいります。 全体の注文数によってはお届け時期が大きく遅れることもございます。予めご了承ください。</p>
+                        <div class="BUY wrap btn" style="width: 600px;">
+                                <a style="width: 532px;" href="detail.html">
+                                        詳細ページ
+                                     </a>
+                                </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <a class="ATOP" id="goTop"></a>
+        <footer class="flex">
+               <p style="font-size:12px;padding: 0;"> ©TYPE-MOON / FGO PROJECT © Aniplex Inc. All rights reserved. </p>
+        </footer>
+
+         <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+
+        <script>
+        // jQuery is required to run this code
+  $( document ).ready(function() {
+    scaleVideoContainer();
+
+    initBannerVideoSize('.video-container .poster img');
+    initBannerVideoSize('.video-container .filter');
+    initBannerVideoSize('.video-container video');
+
+    $(window).on('resize', function() {
+      scaleVideoContainer();
+      scaleBannerVideoSize('.video-container .poster img');
+      scaleBannerVideoSize('.video-container .filter');
+      scaleBannerVideoSize('.video-container video');
+    });
+  });
+
+  function scaleVideoContainer() {
+    var height = $(window).height() + 5;
+    var unitHeight = parseInt(height) + 'px';
+    $('.homepage-hero-module').css('height',unitHeight);
+  }
+
+  function initBannerVideoSize(element){
+    $(element).each(function(){
+      $(this).data('height', $(this).height());
+      $(this).data('width', $(this).width());
+    });
+
+    scaleBannerVideoSize(element);
+  }
+
+  function scaleBannerVideoSize(element) {
+
+    var windowWidth = $(window).width(),
+    windowHeight = $(window).height() + 5,
+    videoWidth,
+    videoHeight;
+
+    // console.log(windowHeight);
+
+    $(element).each(function(){
+      var videoAspectRatio = $(this).data('height')/$(this).data('width');
+
+      $(this).width(windowWidth);
+
+      if(windowWidth < 1000){
+          videoHeight = windowHeight;
+          videoWidth = videoHeight / videoAspectRatio;
+          $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+
+          $(this).width(videoWidth).height(videoHeight);
+      }
+
+      $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+    });
+  }
+        </script>
+
+<script type="text/javascript">
+    $(function() {
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 960)  {          /* 要滑動到選單的距離 */
+           $('.dropdowns').addClass('navFixed');   /* 幫選單加上固定效果 */
+        } else {
+          $('.dropdowns').removeClass('navFixed'); /* 移除選單固定效果 */
+        }
+      });
+    });
+</script>
+<script>
+    $(function(){
+ 
+ var $ulPic=$('ul.pic'),
+ $ulPage=$('ul.page'),
+ _liPicHtml=$ulPic.html(),//把裡面元素抓出來
+ _width=$('#wrapper').width(),
+ nowIndex=0,
+ timer,
+ speed=2000,//換banner時間
+ picLen=$ulPic.find('li').length;
+
+ //---------------------------------------------------------------------
+
+ //生出page dot
+ $ulPic.find('li').each(function(){
+     $ulPage.append('<li></li>');
+ })
+ $ulPage.css({width:$('ul.page li').outerWidth(true)*picLen});
+    //outerWidth(true)=margin+padding
+
+ //---------------------------------------------------------------------
+
+ //把圖片變double
+ $ulPic.html(_liPicHtml+_liPicHtml);//把值塞進去
+ picLen=$('ul.pic li').length;//本來4張圖 現在變8張了
+
+ //init
+ dot();
+ timer=setTimeout(bannerMove,speed)
+
+ //---------------------------------------------------------------------
+
+ //按左右
+ $('#wrapper h2').click(function(){
+     bannerMove();
+ })
+ $('#wrapper h3').click(function(){
+
+     clearTimeout(timer);
+
+     //$ulPic瞬間移動到中間
+     if(nowIndex<=0){
+             $ulPic.css({left:picLen/2*_width*-1});
+             nowIndex=picLen/2;
+         }
+
+     nowIndex=(nowIndex-1+picLen)%picLen;//上一張圖魔法指令
+
+     //圖向左移動
+     $ulPic.animate({left:nowIndex*_width*-1},500,function(){
+         timer=setTimeout(bannerMove,speed)
+     });
+
+     dot();
+ })
+
+ //圖片移動
+ function bannerMove(){
+
+     clearTimeout(timer);
+     nowIndex=(nowIndex+1)%picLen;//下一張圖魔法指令
+
+     //圖向左移動
+     $ulPic.animate({left:nowIndex*_width*-1},500,function(){
+         //$ulPic瞬間移動到最左邊
+         if(nowIndex>=picLen/2){
+             $ulPic.css({left:0});
+             nowIndex=0;
+         }
+         timer=setTimeout(bannerMove,speed)
+     });
+
+     dot();
+ }
+
+ function dot(){
+     //dot change color
+     $ulPage.find('li').removeClass('DotColor').eq(nowIndex).addClass('DotColor');
+     if(nowIndex==5){
+         $ulPage.find('li').eq(0).addClass('DotColor');
+     }
+ }
+
+})
+    </script>
+    <script>
+
+            $("#goTop").click(function(){
+              //$(window).scrollTop(0);
+              $('html,body').animate({
+                    scrollTop: 0
+              }, 700);
+            });
+            
+          </script>
+          <script>
+                 $(window).scroll(function(event){
+       var st = $(this).scrollTop();
+       if(st>1200){
+        $(".ATOP").addClass('TOP');
+       }else{
+        $(".ATOP").removeClass('TOP');
+        $("")
+       }
+    });
+    
+            </script>
+            
+                   <script>
+                        // 視窗事件
+                        $( window ).scroll( function () {
+                             
+                            if ( $( this ).scrollTop() > $( "#areaA" ).offset().top -300 ) {
+            
+                              $( "#areaA .visible" ).each( function ( i ) {
+                                //讓所有 visible delay 200秒 刪除class 切換  fadeInUp
+                                $( this ).delay( i * 200 ).queue( function () {
+                                  $( this ).removeClass( "visible" ).addClass( "fadeInUp" );
+                                } );
+                              } );
+                              $( "#areaA .UNfadein" ).each( function ( i ) {
+                                //讓所有 visible delay 200秒 刪除class 切換  fadeInUp
+                                $( this ).delay( i * 200 ).queue( function () {
+                                  $( this ).removeClass( "UNfadein" ).addClass( "fadein" );
+                                } );
+                              } );
+                            }
+                        
+                        } );    
+                        
+                        </script>
+
+
+</body>
+</html>
